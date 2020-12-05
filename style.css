@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #e0e0e0;
+}
+body {
+  background-color: #f6f7fb;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 350px;
+  margin-bottom: 30px;
+}
+
+.progress-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: var(--line-border-empty);
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.progress {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  background-color: var(--line-border-fill);
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  border: 1px solid var(--line-border-empty);
+  transition: 0.4s ease;
+}
+.circle.active {
+  border-color: var(--line-border-fill);
+}
+.btn {
+  padding: 8px 30px;
+  border: 0;
+  background-color: var(--line-border-fill);
+  border-radius: 6px;
+  color: #fff;
+  font-family: sans-serif;
+  cursor: pointer;
+  outline: none;
+  margin: 5px;
+  font-size: 14px;
+}
+.btn:hover.active {
+  transform: scale(1.1);
+}
+.btn:focus {
+  outline: none;
+}
+.btn:disabled {
+  background-color: var(--line-border-empty);
+}
