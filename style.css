@@ -40,7 +40,6 @@ body {
   width: 100%;
   background-color: var(--line-border-empty);
   z-index: -1;
-  transition: 0.4s ease;
 }
 
 .progress {
